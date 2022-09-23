@@ -1,6 +1,19 @@
 import random
 import string
 
+print(
+ "\n _____         _____ _____  _____ ______ _   _\n"
+ "|  __ \ /\    / ____/ ____|/ ____|  ____| \ | |\n"
+ "| |__) /  \  | (___| (___ | |  __| |__  |  \| |\n"
+ "|  ___/ /\ \  \___ \\___  \| | |_ |  __| | . ` |\n"
+ "| |  / ____ \ ____) |___) | |__| | |____| |\  |\n"
+ "|_| /_/    \_\_____/_____/ \_____|______|_| \_|\n"
+ "\n-------------------------------------------------\n"                                               
+)
+
+passName = input("Note for password: ")
+print("\n" + passName + "\n-------------------------------------------------\n")
+
 letterLarge = list(string.ascii_uppercase)
 letterSmall = list(string.ascii_lowercase)
 number = list(string.digits)
@@ -25,8 +38,8 @@ third4 = random.choice(number)
 
 part3 = third1 + third2 + third3 + third4
 
-passName = input("Note for password: ")
-
 f = open("pass.txt", "a")
 f.write(passName + " - " + part1 + "_" + part2 + part3 + "\n")
 f.close
+
+#################################################################

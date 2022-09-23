@@ -1,13 +1,9 @@
-
-from cryptography import fernet
 import random
 import string
 
 letterLarge = list(string.ascii_uppercase)
 letterSmall = list(string.ascii_lowercase)
 number = list(string.digits)
-
-
 
 first1 = random.choice(letterLarge)
 first2 = random.choice(letterLarge)
@@ -29,12 +25,8 @@ third4 = random.choice(number)
 
 part3 = third1 + third2 + third3 + third4
 
-#passWord = print(part1 + "_" + part2 + part3)
-
 passName = input("Note for password: ")
 
 f = open("pass.txt", "a")
 f.write(passName + " - " + part1 + "_" + part2 + part3 + "\n")
 f.close
-
-#https://www.thepythoncode.com/article/encrypt-decrypt-files-symmetric-python

@@ -1,7 +1,7 @@
 # pass-gen
 
-![image](https://user-images.githubusercontent.com/97634536/192098684-305edd61-9cf0-4dec-9a95-629364681515.png)
+![image](https://user-images.githubusercontent.com/97634536/192098749-e2571047-d1f6-4865-aedd-d9fcc45095e3.png)
 
-![image](https://user-images.githubusercontent.com/97634536/192098659-c9f160aa-c5fb-4719-89d8-3a826dcd6ba6.png)
+![image](https://user-images.githubusercontent.com/97634536/192098787-05d07604-9e54-4fba-b8d3-c62c671a8456.png)
 
-![image](https://user-images.githubusercontent.com/97634536/192098697-4d2b0f36-7a01-4200-93cc-e93183c195c3.png)
+![image](https://user-images.githubusercontent.com/97634536/192098817-4d0d6859-944d-4fc8-8802-0bff16b59fd3.png)

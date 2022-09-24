@@ -23,9 +23,9 @@ menu()
 option = int(input("\n Choose option: "))
 if option == 1:
     def menu():
-        print("[1] Generate password")
-        print("[2] Delete password file")
-        print("[0] Exit")
+        print(" [1] Generate password")
+        print(" [2] Delete password file")
+        print(" [0] Exit")
     print()
     menu()
     option = int(input("\n Choose option: "))
@@ -71,9 +71,9 @@ if option == 1:
         input("\n Press any key to exit...")
 elif option == 2:
     def menu():
-            print("[1] Encrypt")
-            print("[2] Decrypt")
-            print("[3] Delete key")
+            print(" [1] Encrypt")
+            print(" [2] Decrypt")
+            print(" [3] Delete key")
     print()
     menu()
 

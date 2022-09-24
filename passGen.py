@@ -1,4 +1,4 @@
-from cryptography import fernet
+from cryptography.fernet import Fernet
 import random
 import string
 import os
@@ -13,16 +13,25 @@ print(
  "\n-------------------------------------------------\n"                                               
 )
 
-def menu ():
-    print("[1] Create new list")
-    print("[2] Delete list")
+def menu():
+        print(" [1] Password")
+        print(" [2] Encryption")
+        print(" [0] Exit")
 print()
 menu()
 
-option = int(input("\nChoose option: "))
-while option != 0:
+option = int(input("\n Choose option: "))
+if option == 1:
+    def menu():
+        print("[1] Generate password")
+        print("[2] Delete password file")
+        print("[0] Exit")
+    print()
+    menu()
+    option = int(input("\n Choose option: "))
     if option == 1:
-        passName = input("Note for password: ") 
+        passName = input("\n Note for password: ") 
+
         letterLarge = list(string.ascii_uppercase)
         letterSmall = list(string.ascii_lowercase)
         number = list(string.digits)
@@ -47,14 +56,66 @@ while option != 0:
 
         part3 = third1 + third2 + third3 + third4
 
+        print("\n Password: " + passName + " - " + part1 + "_" + part2 + part3)
+
+
         f = open("pass.txt", "a")
         f.write(passName + " - " + part1 + "_" + part2 + part3 + "\n")
         f.close
-    
+
+        input("\n Press any key to exit...")
     elif option == 2:
-        os.remove('pass.txt')
-        
+        os.remove("pass.txt")
+
+    else:
+        input("\n Press any key to exit...")
+elif option == 2:
+    def menu():
+            print("[1] Encrypt")
+            print("[2] Decrypt")
+            print("[3] Delete key")
+    print()
+    menu()
+
+    option = int(input("\n Choose option: "))
+    if option == 1:
+        print("\n Encrypting...")
+
+        passList = "pass.txt"
+
+        key = Fernet.generate_key()
+
+        with open("key.key", "wb") as theKey:
+                theKey.write(key)
+
+        with open(passList, "rb") as theFile:
+                contents = theFile.read()
+        contents_encrypted = Fernet(key).encrypt(contents)
+        with open(passList, "wb") as theFile:
+                theFile.write(contents_encrypted)
+
+        input("\n Press any key to exit...")
 
 
+    elif option == 2:
+        print("\n Decrypting...")
 
-#################################################################
+        passList = "pass.txt"
+
+        with open("key.key", "rb") as key:
+                decryptKey = key.read()
+
+        with open(passList, "rb") as theFile:
+                contents = theFile.read()
+        contents_decrypted = Fernet(decryptKey).decrypt(contents)
+        with open(passList, "wb") as theFile:
+                theFile.write(contents_decrypted)
+
+        input("\n Press any key to exit...")
+
+    elif option == 3:
+        os.remove("key.key")
+    else:
+        input("\n Press any key to exit...")
+else:
+    input("\n Press any key to exit...")

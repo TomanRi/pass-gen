@@ -69,6 +69,11 @@ if option == 1:
 
     else:
         input("\n Press any key to exit...")
+
+###########################################################
+#                       DECRYPTION                        #
+###########################################################
+
 elif option == 2:
     def menu():
             print(" [1] Encrypt")

@@ -38,7 +38,7 @@ while option != 0:
 
         print()
         menu()
-
+        
         option = int(input("\n Choose option: "))
 
         if option == 1:
@@ -67,14 +67,14 @@ while option != 0:
             f.write(passName + " - " + password + "\n")
             f.close
 
-            input("\n Press any key to exit...")
+            input("\n Press any key to exit...\n")
 
         elif option == 2:
 
             os.remove("pass.txt")
 
         else:
-            input("\n Press any key to exit...")
+            input("\n Press any key to exit...\n")
 
     ###########################################################
     #                       DECRYPTION                        #
@@ -115,7 +115,7 @@ while option != 0:
             else:
                     print("\n Key is missing!")
 
-            input("\n Press any key to exit...")
+            input("\n Press any key to exit...\n")
 
 
         elif option == 2:
@@ -142,23 +142,26 @@ while option != 0:
             else:
                     print("\n Key is missing!")
 
-            input("\n Press any key to exit...")
+            input("\n Press any key to exit...\n")
 
         elif option == 3:
 
-            key = Fernet.generate_key()
+            if os.path.exists("key.key"):
+                print("\n Key already exists!\n")
+            else:
+                key = Fernet.generate_key()
 
-            with open("key.key", "wb") as theKey:
-                            theKey.write(key)
+                with open("key.key", "wb") as theKey:
+                                theKey.write(key)
 
-            print("\n Generating key... \n")
+                print("\n Generating key... \n")
 
         elif option == 4:
 
             os.remove("key.key")
 
         else:
-            input("\n Press any key to exit...")
+            input("\n Press any key to exit...\n")
 
     else:
-        input("\n Press any key to exit...")
+        input("\n Press any key to exit...\n")

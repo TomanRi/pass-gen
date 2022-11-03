@@ -120,8 +120,6 @@ while option != 0:
 
         elif option == 2:
 
-            print("\n Decrypting...")
-
             passList = "pass.txt"
 
             if os.path.exists("key.key"):
@@ -138,6 +136,8 @@ while option != 0:
 
                     with open(passList, "wb") as theFile:
                             theFile.write(contents_decrypted)
+
+                    print("\n Decrypting...")
 
             else:
                     print("\n Key is missing!")

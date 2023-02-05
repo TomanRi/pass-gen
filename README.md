@@ -1,5 +1,7 @@
 # pass-gen
 
+If you want to use passGen on Linux, you will need to run it with sudo.
+
 Module needed: https://pypi.org/project/cryptography/
 
 pip install cryptography
